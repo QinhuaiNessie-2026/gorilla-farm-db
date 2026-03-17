@@ -3,12 +3,35 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Coastal-natural palette (inspired by modern zoo sites) */
+  --paper: #fbf6ea; /* warm sand */
+  --ink: #0b1f22; /* deep teal-black */
+  --moss: #0a5f78; /* ocean blue */
+  --leaf: #1f7a5a; /* forest green */
+  --clay: #c66a3d; /* warm terracotta */
+  --sand: #e6d3a6; /* light sand accent */
+  --natgeo: #f7d000; /* keep: brand accent */
+
+  /* Translucent surfaces */
+  --surface: rgba(255, 250, 242, 0.55);
+  --surface-strong: rgba(255, 250, 242, 0.72);
+  --chip: rgba(255, 250, 242, 0.42);
+  --chip-strong: rgba(255, 250, 242, 0.58);
+  --border: rgba(11, 31, 34, 0.12);
+  --border-strong: rgba(11, 31, 34, 0.18);
+
+  /* Text tones (avoid pure black for readability on glass) */
+  --text: var(--ink);
+  --text-muted: rgba(11, 31, 34, 0.76);
+  --text-faint: rgba(11, 31, 34, 0.62);
+  --text-subtle: rgba(11, 31, 34, 0.50);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-ui-sans);
+  --font-display: var(--font-display-serif);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -16,11 +39,31 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --paper: #071315;
+    --ink: #e8f0ee;
+    --moss: #62c8e2;
+    --leaf: #7fe0b1;
+    --clay: #ff9a6a;
+    --sand: #cbb27c;
+    --natgeo: #f7d000;
+
+    --surface: rgba(8, 26, 28, 0.62);
+    --surface-strong: rgba(8, 26, 28, 0.78);
+    --chip: rgba(8, 26, 28, 0.48);
+    --chip-strong: rgba(8, 26, 28, 0.62);
+    --border: rgba(232, 240, 238, 0.14);
+    --border-strong: rgba(232, 240, 238, 0.20);
+
+    --text: var(--ink);
+    --text-muted: rgba(232, 240, 238, 0.82);
+    --text-faint: rgba(232, 240, 238, 0.68);
+    --text-subtle: rgba(232, 240, 238, 0.54);
   }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  font-family: var(--font-ui-sans), system-ui, -apple-system, "Segoe UI", Arial,
+    Helvetica, sans-serif;
 }
