@@ -80,9 +80,6 @@ export default function Home() {
                     今日农田与栖息地概览
                   </div>
                 </div>
-                <span className="rounded-full border border-[color:var(--border)] bg-[color:var(--chip-strong)] px-3 py-1 text-xs font-semibold tracking-wide text-[color:var(--text-faint)]">
-                  实验农田 · 大型湿地
-                </span>
               </div>
 
               <div className="mt-5 grid gap-3 sm:grid-cols-3">
@@ -90,22 +87,38 @@ export default function Home() {
                   title="作物块"
                   subtitle="Plots"
                   value="24"
-                  note="正在记录管理措施"
                 />
                 <SnapshotStat
                   title="重点物种"
                   subtitle="Key Species"
                   value="38"
-                  note="含大雁等迁徙物种"
                 />
                 <SnapshotStat
                   title="事件记录"
                   subtitle="Events"
                   value="120+"
-                  note="气候 · 病虫害 · 保护"
                 />
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mt-8">
+          <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-7 backdrop-blur shadow-[0_18px_40px_rgba(0,0,0,0.10)]">
+            <div className="text-xs font-extrabold tracking-[0.18em] text-[color:var(--text-subtle)]">
+              WHAT IS IT
+            </div>
+            <div className="mt-2 flex flex-col gap-2 lg:flex-row lg:items-end lg:justify-between">
+              <h2 className="text-xl font-semibold tracking-tight font-[family:var(--font-display)]">
+                什么是大猩猩农田数据库
+                <span className="ml-2 align-middle text-xs font-semibold tracking-wide text-[color:var(--text-subtle)]">
+                  Gorilla Field Database
+                </span>
+              </h2>
+            </div>
+            <p className="mt-3 max-w-none text-sm leading-7 text-[color:var(--text-faint)]">
+              红山森林动物园各个场馆中，保育员与志愿者们为循环处理动物饲养产生的各种生物垃圾，会建造生态友好型农田自留地。农田数据库用来记录自留地内出现的物种信息、种植的作物和正在发生的生态事件，以此拉近保育员、志愿者们和生态系统的距离。
+            </p>
           </div>
         </section>
 
@@ -230,12 +243,10 @@ function SnapshotStat({
   title,
   subtitle,
   value,
-  note,
 }: {
   title: string;
   subtitle: string;
   value: string;
-  note: string;
 }) {
   return (
     <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--chip)] p-4 shadow-[0_10px_24px_rgba(0,0,0,0.10)]">
@@ -246,7 +257,6 @@ function SnapshotStat({
       <div className="mt-2 text-3xl font-semibold tracking-tight text-[color:var(--text)]">
         {value}
       </div>
-      <div className="mt-1 text-xs text-[color:var(--text-subtle)]">{note}</div>
     </div>
   );
 }
